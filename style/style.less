@@ -1,0 +1,119 @@
+html, body {
+    min-height: 100%;
+}
+
+#window {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#window-left {
+    position: absolute;
+    left: 0;
+    top: @navbar-height;
+    bottom: 0;
+    width: @window-left-width;
+    overflow: auto;
+    border-right: 1px solid @navbar-default-border;
+
+
+    #spaces {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        overflow: auto;
+        height: 50%;
+    }
+
+    #people {
+        border-top: 1px solid @navbar-default-border;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        height: 50%;
+        overflow: auto;
+    }
+}
+
+#chat-messages {
+
+    .chat-message {
+        padding: 6px 0;
+    }
+
+    .username {
+        text-align: right;
+        color: @gray-light;
+    }
+
+    .message {
+
+    }
+
+    .date {
+        color: @gray-light;
+    }
+
+    .odd {
+        background: @gray-lighter;
+    }
+}
+
+#window-right {
+    position: absolute;
+    right: 0;
+    top: @navbar-height;
+    bottom: @window-bottom-height;
+    width: 100 - @window-left-width;
+}
+
+#window-bottom {
+    position: absolute;
+    left: @window-left-width;
+    right: 0;
+    bottom: 0;
+    height: @window-bottom-height;
+}
+
+#chat-messages {
+    position: absolute;
+    left: 0;
+    right: @chat-people-list-width;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+}
+
+#chat-people {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: @chat-people-list-width;
+    bottom: 0;
+    overflow: auto;
+    border-left: 1px solid @navbar-default-border;
+}
+
+.status:before {
+    &:extend(.ion);
+    content: @ionicon-var-record;
+}
+
+.status-available
+{
+    color: green;
+}
+
+.status-away
+{
+    color: orange;
+}
+
+.status-offline {
+    color: #808080;
+}

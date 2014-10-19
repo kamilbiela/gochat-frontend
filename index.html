@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="Chat">
+<head >
+    <meta charset="UTF-8">
+    <title>GoChat</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="bower_components/AdminLTE/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="bower_components/AdminLTE/css/ionicons.min.css" rel="stylesheet" type="text/css"/>
+    <link href="dist/style.css" rel="stylesheet" type="text/css"/>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/html5shiv/index.js"></script>
+    <script src="bower_components/respond/dest/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="dist/app.min.js"></script>
+</head>
+<body>
+
+<div id="window">
+    <div id="window-top" ng-include="'app/template/window-top.tpl.html'"></div>
+    <div id="window-left" ng-include="'app/template/window-left.tpl.html'"></div>
+    <div id="window-right" ng-include="'app/template/window-right.tpl.html'"></div>
+    <div id="window-bottom" ng-include="'app/template/window-bottom.tpl.html'"></div>
+</div>
+
+</body>
+</html>
