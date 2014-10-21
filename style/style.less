@@ -2,6 +2,10 @@ html, body {
     min-height: 100%;
 }
 
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
 #window {
     position: absolute;
     top: 0;
@@ -18,50 +22,6 @@ html, body {
     width: @window-left-width;
     overflow: auto;
     border-right: 1px solid @navbar-default-border;
-
-
-    #spaces {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        overflow: auto;
-        height: 50%;
-    }
-
-    #people {
-        border-top: 1px solid @navbar-default-border;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 50%;
-        height: 50%;
-        overflow: auto;
-    }
-}
-
-#chat-messages {
-
-    .chat-message {
-        padding: 6px 0;
-    }
-
-    .username {
-        text-align: right;
-        color: @gray-light;
-    }
-
-    .message {
-
-    }
-
-    .date {
-        color: @gray-light;
-    }
-
-    .odd {
-        background: @gray-lighter;
-    }
 }
 
 #window-right {
@@ -70,7 +30,53 @@ html, body {
     top: @navbar-height;
     bottom: @window-bottom-height;
     width: 100 - @window-left-width;
+
+    #chat-messages {
+        position: absolute;
+        left: 0;
+        right: @chat-people-list-width;
+        top: 0;
+        bottom: 0;
+        overflow: auto;
+
+        .row-chat-message {
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+
+            border-bottom: 1px solid @gray-lighter;
+        }
+
+        .avatar {
+            padding-right: @padding-base-horizontal;
+        }
+
+        .username {
+            color: @gray-light;
+            font-size: 0.8em;
+        }
+
+        .message {
+
+        }
+
+        .date {
+            color: @gray-light;
+            font-size: 0.8em;
+        }
+    }
+
+    #chat-people {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: @chat-people-list-width;
+        bottom: 0;
+        overflow: auto;
+        border-left: 1px solid @navbar-default-border;
+    }
 }
+
+
 
 #window-bottom {
     position: absolute;
@@ -78,42 +84,16 @@ html, body {
     right: 0;
     bottom: 0;
     height: @window-bottom-height;
+
+    #send-message-input button {
+        height: @window-bottom-height
+    }
 }
 
-#chat-messages {
-    position: absolute;
-    left: 0;
-    right: @chat-people-list-width;
-    top: 0;
-    bottom: 0;
-    overflow: auto;
-}
-
-#chat-people {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: @chat-people-list-width;
-    bottom: 0;
-    overflow: auto;
-    border-left: 1px solid @navbar-default-border;
-}
-
-.status:before {
-    &:extend(.ion);
-    content: @ionicon-var-record;
-}
-
-.status-available
-{
-    color: green;
-}
-
-.status-away
-{
-    color: orange;
-}
-
-.status-offline {
-    color: #808080;
+.nav.nav-list {
+    font-size: 0.9  em;
+    &>li>a {
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
 }
