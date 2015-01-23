@@ -1,2 +1,1 @@
-
-angular.module('Chat', []);
+angular.module('Chat', ["Config", "ui.router"]);

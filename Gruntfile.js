@@ -4,7 +4,8 @@ module.exports = function (grunt) {
         uglify: {
             options: {
                 sourceMap: true,
-                sourceMapIncludeSources: true
+                sourceMapIncludeSources: true,
+                mangle: false
             },
             app: {
                 src: [
@@ -29,10 +30,14 @@ module.exports = function (grunt) {
                 boss: true,
                 eqnull: true,
                 browser: true,
-                globals: {"angular": true}
+                force: true,
+                globals: {"angular": true, "console": true}
             },
             gruntfile: {
                 src: 'Gruntfile.js'
+            },
+            app: {
+                src: '<%= uglify.app.src %>',
             }
         },
         less: {

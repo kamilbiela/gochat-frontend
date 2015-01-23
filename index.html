@@ -15,15 +15,15 @@
     <![endif]-->
 
     <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="config.js"></script>
     <script src="dist/app.min.js"></script>
 </head>
 <body>
 
 <div id="window">
-    <div id="window-top" ng-include="'app/template/window-top.tpl.html'"></div>
-    <div id="window-left" ng-include="'app/template/window-left.tpl.html'"></div>
-    <div id="window-right" ng-include="'app/template/window-right.tpl.html'"></div>
-    <div id="window-bottom" ng-include="'app/template/window-bottom.tpl.html'"></div>
+    <div id="window-top" ng-include="'app/template/layout/navbar.html'"></div>
+    <div ui-view="main"></div>
 </div>
 
 </body>
